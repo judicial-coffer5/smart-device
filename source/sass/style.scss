@@ -10,6 +10,7 @@
 
 @import "variables";
 @import "mixins";
+@import "functions";
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
@@ -18,11 +19,18 @@
 // Blocks
 // ---------------------------------
 
-@import "blocks/btn";
-@import "blocks/modal";
-@import "blocks/custom-input";
-@import "blocks/custom-toggle";
-@import "blocks/custom-select";
+// @import "blocks/btn";
+// @import "blocks/modal";
+// @import "blocks/custom-input";
+// @import "blocks/custom-toggle";
+// @import "blocks/custom-select";
+@import "blocks/page-header";
+@import "blocks/page-footer";
+@import "blocks/main-unit";
+@import "blocks/advantages";
+@import "blocks/about";
+@import "blocks/services";
+@import "blocks/form";
 
 // ---------------------------------
 

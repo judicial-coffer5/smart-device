@@ -1,0 +1,150 @@
+.page-header {
+  background: $header-background;
+}
+
+.page-header__inner {
+  width: vw-desktop(1220px);
+  margin: 0 auto;
+  display: flex;
+  padding: 30px 60px 35px 0;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-1023 {
+    padding: 20px 20px 25px 0;
+    width: vw-tablet(670px);
+  }
+
+  @include vp-767 {
+    padding: 10px 9px 20px 0;
+    width: vw-mobile(268px);
+  }
+}
+
+.page-header__logo {
+  display: flex;
+  gap: 15px;
+  width: 215px;
+  align-items: center;
+
+  @include vp-767 {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+  }
+
+  @include hover-focus {
+    & .page-header__logo-text,
+    .page-header__logo-text-bold,
+    .page-header__logo-icon {
+      color: $hover-deep-sky-blue;
+    }
+
+    &:active {
+      & .page-header__logo-text,
+      .page-header__logo-text-bold,
+      .page-header__logo-icon {
+        color: $active-deep-sky-blue;
+      }
+    }
+  }
+}
+
+.page-header__logo-icon {
+  color: $color-deep-sky-blue;
+}
+
+.page-header__logo-description {
+  display: flex;
+  flex-direction: column;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.page-header__logo-text-bold {
+  font-family: $font-robotocondensed;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: $color-alice-blue;
+  white-space: nowrap;
+}
+
+.page-header__logo-text {
+  font-family: $font-roboto;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-default-white;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.page-header__contacts {
+  display: flex;
+  margin: 0;
+  padding: 15px 13px 20px 7px;
+  list-style-type: none;
+  width: vw-desktop(480px);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @include vp-1023 {
+    width: 100px;
+    padding: 10px 10px 25px;
+  }
+
+  @include vp-767 {
+    padding: 10px;
+  }
+}
+
+.page-header__contacts-link {
+  display: flex;
+  gap: 15px;
+
+  @include hover-focus {
+    opacity: 0.9;
+  }
+}
+
+.page-header__contacts-text {
+  font-family: $font-ptmono;
+  font-size: 16px;
+  line-height: 18px;
+  color: $color-alice-blue;
+  white-space: nowrap;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.page-header__button {
+  border: 1px solid $color-alice-blue;
+  border-radius: 3px;
+  font-family: $font-robotocondensed;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-alice-blue;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 160px;
+  text-align: center;
+  white-space: nowrap;
+  height: 40px;
+
+  @include vp-1023 {
+    display: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.9;
+  }
+}

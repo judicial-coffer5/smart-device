@@ -1,0 +1,11 @@
+@function vw-desktop($px) {
+  @return calc($px / 1920px) * 100vw;
+}
+
+@function vw-tablet($px) {
+  @return calc($px / 770px) * 100vw;
+}
+
+@function vw-mobile($px) {
+  @return calc($px / 320px) * 100vw;
+}
