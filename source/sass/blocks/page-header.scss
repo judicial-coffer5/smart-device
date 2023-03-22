@@ -1,84 +1,78 @@
 .page-header {
+  width: vw-desktop(1920px);
   background: $header-background;
+  min-height: 120px;
+  position: fixed;
+  z-index: 3;
+
+  @include vp-1023 {
+    width: vw-tablet(770px);
+    min-height: 100px;
+  }
+
+  @include vp-767 {
+    width: vw-mobile(320px);
+    min-height: 70px;
+  }
 }
 
 .page-header__inner {
   width: vw-desktop(1220px);
   margin: 0 auto;
   display: flex;
-  padding: 30px 60px 35px 0;
+  padding-top: 30px;
+  padding-right: 60px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   @include vp-1023 {
-    padding: 20px 20px 25px 0;
+    padding-top: 20px;
+    padding-right: 20px;
     width: vw-tablet(670px);
   }
 
   @include vp-767 {
-    padding: 10px 9px 20px 0;
+    padding-top: 15px;
+    padding-right: 9px;
     width: vw-mobile(268px);
   }
 }
 
 .page-header__logo {
-  display: flex;
-  gap: 15px;
-  width: 215px;
-  align-items: center;
+  line-height: 0;
+}
 
-  @include vp-767 {
-    width: 35px;
-    height: 35px;
-    margin-top: 5px;
-  }
+.page-header__logo-desktop {
+  color: $color-alice-blue;
 
   @include hover-focus {
-    & .page-header__logo-text,
-    .page-header__logo-text-bold,
-    .page-header__logo-icon {
-      color: $hover-deep-sky-blue;
-    }
+    color: $color-deep-sky-blue;
 
     &:active {
-      & .page-header__logo-text,
-      .page-header__logo-text-bold,
-      .page-header__logo-icon {
-        color: $active-deep-sky-blue;
-      }
+      color: $color-pacific-blue;
     }
   }
-}
-
-.page-header__logo-icon {
-  color: $color-deep-sky-blue;
-}
-
-.page-header__logo-description {
-  display: flex;
-  flex-direction: column;
 
   @include vp-767 {
     display: none;
   }
 }
 
-.page-header__logo-text-bold {
-  font-family: $font-robotocondensed;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 29px;
-  color: $color-alice-blue;
-  white-space: nowrap;
-}
+.page-header__logo-mobile {
+  display: none;
 
-.page-header__logo-text {
-  font-family: $font-roboto;
-  font-size: 12px;
-  line-height: 14px;
-  color: $color-default-white;
-  opacity: 0.7;
-  white-space: nowrap;
+  @include vp-767 {
+    display: block;
+    color: $color-deep-sky-blue;
+  }
+
+  @include hover-focus {
+    color: $color-alice-blue-2;
+
+    &:active {
+      color: $color-pacific-blue;
+    }
+  }
 }
 
 .page-header__contacts {
@@ -97,7 +91,7 @@
   }
 
   @include vp-767 {
-    padding: 10px;
+    padding: 5px 10px 10px;
   }
 }
 
@@ -105,9 +99,48 @@
   display: flex;
   gap: 15px;
 
+
   @include hover-focus {
-    opacity: 0.9;
+    & .page-header__contacts-text {
+      color: $color-deep-sky-blue;
+    }
+
+    &:active {
+      & .page-header__contacts-text {
+        color: $color-pacific-blue;
+      }
+
+      & .page-header__contacts-image {
+        color: $color-pacific-blue;
+      }
+    }
   }
+
+  @include vp-767 {
+    @include hover-focus {
+      & .page-header__contacts-text {
+        color: $color-deep-sky-blue;
+      }
+
+      & .page-header__contacts-image {
+        color: $color-alice-blue-2;
+      }
+
+      &:active {
+        & .page-header__contacts-text {
+          color: $color-pacific-blue;
+        }
+
+        & .page-header__contacts-image {
+          color: $color-pacific-blue;
+        }
+      }
+    }
+  }
+}
+
+.page-header__contacts-image {
+  color: $color-deep-sky-blue;
 }
 
 .page-header__contacts-text {
@@ -139,6 +172,18 @@
   text-align: center;
   white-space: nowrap;
   height: 40px;
+  background-color: inherit;
+  cursor: pointer;
+
+  @include hover-focus {
+    color: $color-deep-sky-blue;
+    border-color: $color-deep-sky-blue;
+
+    &:active {
+      color: $color-pacific-blue;
+      border-color: $color-pacific-blue;
+    }
+  }
 
   @include vp-1023 {
     display: none;

@@ -52,51 +52,38 @@
   gap: 15px;
   width: 215px;
   align-items: center;
+  color: $color-alice-blue;
+
+  @include hover-focus {
+    color: $color-deep-sky-blue;
+
+    &:active {
+      color: $color-pacific-blue;
+    }
+  }
 
   @include vp-767 {
-    padding-right: 5px;
+    margin-right: 5px;
   }
-}
-
-.page-footer__logo-icon {
-  color: $color-deep-sky-blue;
-}
-
-.page-footer__logo-description {
-  display: flex;
-  flex-direction: column;
-}
-
-.page-footer__logo-text-bold {
-  font-family: $font-robotocondensed;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 29px;
-  color: $color-alice-blue;
-  white-space: nowrap;
-}
-
-.page-footer__logo-text {
-  font-family: $font-roboto;
-  font-size: 12px;
-  line-height: 14px;
-  color: $color-alice-blue-2;
-  opacity: 0.7;
-  white-space: nowrap;
 }
 
 .page-footer__social-links {
   width: 150px;
   margin: 0;
   display: flex;
-  padding: 0 5px 0 15px;
+  padding: 5px;
   list-style-type: none;
   justify-content: space-between;
   align-items: center;
+  margin-left: 10px;
 
   @include vp-1023 {
-    padding: 5px;
+    padding: 0 5px 5px;
     margin-left: 4px;
+  }
+
+  @include vp-767 {
+    padding: 5px;
   }
 }
 
@@ -107,6 +94,18 @@
 .page-footer__social-link {
   line-height: 0;
   display: inline-block;
+}
+
+.page-footer__social-icon {
+  color: $color-alice-blue-2;
+
+  @include hover-focus {
+    color: $color-deep-sky-blue;
+
+    &:active {
+      color: $color-pacific-blue;
+    }
+  }
 }
 
 .page-footer__links-wrapper {
@@ -135,7 +134,7 @@
     position: relative;
     width: 100%;
     border-bottom: 1px solid $color-azure;
-    padding: 19px 0;
+    padding: 20px 0 19px;
   }
 
   &--navigation {
@@ -155,26 +154,35 @@
   }
 }
 
-.page-footer__list {
-  padding: 0;
-  margin: 0;
+.page-footer__list-wrapper {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
-  flex-direction: column;
-  list-style-type: none;
-  flex-wrap: wrap;
 
-  @include vp-767 {
-    gap: 10px 0;
-    align-items: center;
+  @include vp-1279 {
+    flex-direction: column;
   }
 
-  &--navigation {
-    height: 130px;
-    gap: 10px vw-desktop(30px);
+  @include vp-767 {
+    margin-top: 15px;
+    align-items: center;
+  }
+}
 
-    @include vp-1439 {
-      height: 100%;
+.page-footer__list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+
+  @include vp-767 {
+    align-items: center;
+    margin-bottom: -3px;
+
+    &--contacts {
+      margin-top: 15px;
     }
   }
 }
@@ -191,7 +199,7 @@
   color: $color-default-white;
 
   @include vp-767 {
-    margin-bottom: 15px;
+    margin-bottom: 0;
     text-align: center;
 
     &--navigation {
@@ -205,17 +213,15 @@
 }
 
 .page-footer__item {
-  line-height: 0;
   opacity: 0.7;
+  line-height: 20px;
+  font-family: $font-ptmono;
+  font-size: 16px;
+  color: $color-default-white;
 
   &--address {
-    font-family: $font-ptmono;
-    font-size: 16px;
-    color: $color-default-white;
-    line-height: 20px;
-
     @include vp-767 {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
   }
 
@@ -236,6 +242,14 @@
   color: $color-default-white;
   line-height: 20px;
 
+  @include hover-focus {
+    color: $color-deep-sky-blue;
+
+    &:active {
+      color: $color-pacific-blue;
+    }
+  }
+
   @include vp-1023 {
     white-space: nowrap;
   }
@@ -251,7 +265,7 @@
   @include vp-767 {
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 26px;
     display: block;
     background-color: inherit;
     border: none;

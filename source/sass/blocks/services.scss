@@ -5,7 +5,7 @@
 .services__inner {
   width: vw-desktop(1220px);
   margin: 0 auto;
-  padding: 70px 0 140px;
+  padding: 65px 0 140px;
 
   @include vp-1023 {
     width: vw-tablet(670px);
@@ -14,16 +14,11 @@
 
   @include vp-767 {
     width: vw-mobile(270px);
-    padding: 50px 0 86px;
+    padding: 47px 0 86px;
   }
 }
 
 .services__title {
-  font-family: $font-robotocondensed;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 51px;
-  color: $color-default-white;
   margin: 0 0 54px;
 
   @include vp-1023 {
@@ -31,21 +26,27 @@
   }
 
   @include vp-767 {
-    font-size: 28px;
-    line-height: 141%;
-    width: vw-mobile(261px);
-    margin: 0 0 26px;
+    margin: 0 0 28px;
   }
 }
 
 .services__title-text {
-  margin: 0;
+  font-family: $font-robotocondensed;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: $color-default-white;
+
 
   &--mobile {
     display: none;
   }
 
   @include vp-767 {
+    font-size: 28px;
+    line-height: 141%;
+    width: vw-mobile(261px);
+
     &--desktop {
       display: none;
     }
@@ -76,6 +77,28 @@
   width: vw-desktop(350px);
   height: 650px;
 
+  @include hover-focus {
+    & .services__button {
+      background-color: $color-alice-blue;
+      color: $color-deep-sky-blue;
+    }
+
+    & .services__item-title {
+      color: $color-deep-sky-blue;
+    }
+
+    &:active {
+      & .services__button {
+        background-color: $color-pacific-blue;
+        color: $color-default-white;
+      }
+
+      & .services__item-title {
+        color: $color-pacific-blue;
+      }
+    }
+  }
+
   @include vp-1023 {
     height: 250px;
     width: vw-tablet(670px);
@@ -84,7 +107,7 @@
 
   @include vp-767 {
     width: vw-mobile(270px);
-    padding: 27px 90px 173px 30px;
+    padding: 26px 90px 173px 30px;
   }
 }
 
@@ -147,6 +170,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  background-color: $color-black-pearl;
 
   @include retina {
     &--dpr-1 {
@@ -164,18 +188,20 @@
   border-radius: 3px 0 0 0;
   right: 1px;
   bottom: 0;
-  padding: 25px 25px 25px 30px;
+  padding: 24px 24px 24px 29px;
   width: 60px;
   height: 60px;
   background-color: $color-deep-sky-blue;
   z-index: 2;
+  color: $color-default-white;
+  border: 1px solid $color-deep-sky-blue;
 
   @include vp-1023 {
     right: 0;
   }
 
   @include vp-767 {
-    padding: 17px 17px 17px 20px;
+    padding: 15px 15px 15px 18px;
     width: 40px;
     height: 40px;
   }

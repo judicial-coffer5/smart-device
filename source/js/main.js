@@ -1,7 +1,11 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
-
+import {onModalButtonClick} from './modules/modal-form';
+import {onCheckboxClick} from './modules/checkbox';
+import {footerActions} from './modules/footer-list';
+import {onAboutButtonClick} from './modules/about-list';
+import {phoneInputActions} from './modules/phone-input';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -12,6 +16,13 @@ window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
 
   // Modules
+
+  onModalButtonClick();
+  onCheckboxClick();
+  footerActions();
+  onAboutButtonClick();
+  phoneInputActions();
+
   // ---------------------------------
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'

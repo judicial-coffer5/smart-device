@@ -1,0 +1,23 @@
+.is-hidden {
+  display: none;
+}
+
+.is-open {
+  display: block;
+}
+
+.is-checked {
+  display: block;
+}
+
+.is-mobile {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+[data-list].is-hidden {
+  @include vp-767 {
+    display: none;
+  }
+}

@@ -1,15 +1,52 @@
 .form {
-  background: $form-gradient;
+  background: $color-deep-sky-blue;
+  position: relative;
+  overflow: hidden;
+  max-height: 840px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 840px;
+    top: -107px;
+    left: -990px;
+    background: $color-cerulean;
+    transform: rotate(-41deg);
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
 }
 
 .form__inner {
   display: flex;
+  position: relative;
   justify-content: space-between;
   width: vw-desktop(1210px);
   margin: 0 auto;
-  padding: 170px 0 250px;
-  padding-right: 10px;
+  padding: 169px 10px 251px 0;
   box-sizing: content-box;
+  z-index: 2;
+
+  @include vp-1023 {
+    width: vw-tablet(670px);
+    padding: 50px 0 125px;
+  }
+
+  @include vp-767 {
+    width: vw-mobile(270px);
+    padding: 47px 0 88px;
+  }
+}
+
+.form__image-wrapper {
+  text-align: center;
+
+  @include vp-1023 {
+    display: none;
+  }
 }
 
 .form__image {
@@ -32,6 +69,14 @@
 
 .form__container {
   width: vw-desktop(585px);
+
+  @include vp-1023 {
+    width: vw-tablet(670px);
+  }
+
+  @include vp-767 {
+    width: vw-mobile(270px);
+  }
 }
 
 .form__title {
@@ -41,21 +86,50 @@
   font-size: 36px;
   line-height: 45px;
   color: $color-default-white;
+
+  @include vp-1023 {
+    margin: 0 0 10px;
+  }
+
+  @include vp-767 {
+    font-size: 30px;
+    line-height: 141%;
+    margin: 0 0 8px;
+  }
 }
 
 .form__description {
-  margin: 0 0 35px 5px;
+  margin: 0 0 36px 5px;
   font-family: $font-ptmono;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   color: $color-default-white;
+
+  @include vp-1023 {
+    margin: 0 0 25px 0;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 134%;
+    margin: 0 0 33px 0;
+  }
 }
 
 .form__user {
   display: flex;
   justify-content: space-between;
   margin: 0 0 20px 5px;
+
+  @include vp-1023 {
+    margin: 0 0 20px 0;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .form__user input {
@@ -69,7 +143,6 @@
   font-family: $font-ptmono;
   font-size: 16px;
   line-height: 22px;
-  color: $color-default-white;
 
   &::placeholder {
     font-family: $font-ptmono;
@@ -77,19 +150,28 @@
     line-height: 20px;
     color: $color-default-white;
   }
-}
 
-.form__checkbox-icon {
-  position: absolute;
-  top: 3px;
-  left: 2px;
-  color: $color-deep-sky-blue;
+  @include vp-1023 {
+    width: vw-tablet(320px);
+  }
+
+  @include vp-767 {
+    width: vw-mobile(270px);
+  }
 }
 
 .form__field {
   &--textarea {
-    margin: 0 0 35px 5px;
+    margin: 0 0 34px 5px;
     line-height: 0;
+
+    @include vp-1023 {
+      margin: 0 0 35px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 30px 0;
+    }
   }
 
   &--textarea textarea {
@@ -99,7 +181,7 @@
     background: $color-swamp;
     border-radius: 3px;
     border: none;
-    padding: 24px 15px;
+    padding: 22px 15px;
     font-family: $font-ptmono;
     font-size: 16px;
     line-height: 20px;
@@ -111,10 +193,21 @@
       line-height: 22px;
       color: $color-default-white;
     }
+
+    @include vp-1023 {
+      width: vw-tablet(670px);
+      padding: 30px 15px;
+    }
+
+    @include vp-767 {
+      width: vw-mobile(270px);
+      height: 180px;
+      padding: 24px 15px;
+    }
   }
 
   &--button input {
-    width: vw-desktop(265px);
+    width: 265px;
     background-color: $color-black-pearl-2;
     color: $color-default-white;
     border: none;
@@ -127,22 +220,43 @@
     text-transform: uppercase;
     padding: 17px 25px 13px;
     border-radius: 3px;
+    cursor: pointer;
+
+    @include hover-focus {
+      background-color: $color-rhino;
+
+      &:active {
+        background-color: $color-alice-blue;
+        color: $color-black-pearl-2;
+      }
+    }
+
+    @include vp-1023 {
+      width: vw-tablet(265px);
+      padding: 18px 25px 12px;
+    }
+
+    @include vp-767 {
+      width: 270px;
+    }
   }
 
   &--checkbox {
     display: flex;
     align-items: center;
-    gap: 11px;
-    width: vw-desktop(260px);
-  }
+    justify-content: space-between;
+    width: 260px;
 
-  &--checkbox input:checked + .form__checkbox-icon {
-    color: $color-default-white;
-  }
-}
+    @include vp-1023 {
+      width: vw-tablet(260px);
+      padding-bottom: 5px;
+    }
 
-input:checked + .form__checkbox-icon {
-  color: $color-default-white;
+    @include vp-767 {
+      width: 265px;
+      padding: 0 0 0 5px;
+    }
+  }
 }
 
 .form__end {
@@ -150,22 +264,57 @@ input:checked + .form__checkbox-icon {
   justify-content: space-between;
   align-items: flex-end;
   margin: 0 5px;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include vp-1023 {
+    margin: 0 60px 0 0;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    margin: 0;
+    gap: 25px;
+    align-items: flex-start;
+  }
 }
 
 .form__checkbox {
-  display: block;
   position: relative;
   border: 1px solid $color-default-white;
   border-radius: 2px;
   width: 15px;
   height: 15px;
+  cursor: pointer;
+
+  @include vp-767 {
+    height: 14px;
+    margin-top: -5px;
+  }
+}
+
+.form__checkbox-icon {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  color: $color-default-white;
+
+  @include vp-767 {
+    left: 1px;
+  }
 }
 
 .form__checkbox-text {
   font-family: $font-ptmono;
   font-size: 14px;
-  line-height: 15px;
+  line-height: 16px;
   color: $color-default-white;
   margin: 0;
+  opacity: 0.8;
+  margin-bottom: -4px;
   width: 234px;
+
+  @include vp-1023 {
+    margin-bottom: 0;
+  }
 }

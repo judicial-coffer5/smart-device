@@ -90,16 +90,6 @@
     margin-bottom: 20px;
   }
 
-  &--hide {
-    display: none;
-  }
-
-  &--hide-mobile {
-    @include vp-767 {
-      display: none;
-    }
-  }
-
   @include vp-767 {
     font-size: 14px;
     line-height: 19px;
@@ -120,6 +110,16 @@
   text-transform: uppercase;
   color: $color-deep-sky-blue;
   background-color: inherit;
+  cursor: pointer;
+
+  @include hover {
+    background-color: $color-deep-sky-blue;
+    color: $color-alice-blue;
+
+    &:active {
+      background-color: $color-pacific-blue;
+    }
+  }
 
   @include vp-767 {
     width: 160px;
