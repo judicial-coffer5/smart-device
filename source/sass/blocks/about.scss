@@ -1,19 +1,19 @@
 .about {
   display: flex;
-  width: vw-desktop(1220px);
+  max-width: 1220px;
   margin: 0 auto;
   padding-bottom: 100px;
   gap: 100px;
 
   @include vp-1023 {
     gap: 29px;
-    width: vw-tablet(678px);
+    max-width: 678px;
     padding: 0 4px 80px 0;
   }
 
   @include vp-767 {
     gap: 0;
-    width: vw-mobile(270px);
+    width: 270px;
   }
 }
 
@@ -57,11 +57,16 @@
   font-size: 36px;
   line-height: 51px;
   color: $color-black-pearl;
-  margin: 0 0 12px;
+  margin: 0 0 13px;
+
+  @include vp-1023 {
+    margin: 0 0 12px;
+  }
 
   @include vp-767 {
     font-size: 28px;
     line-height: 39px;
+    margin: 2px 0 13px;
   }
 }
 
@@ -69,9 +74,10 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+  word-break: break-word;
 
   @include vp-1023 {
-    margin-bottom: 15px;
+    margin-bottom: 17px;
   }
 
   @include vp-767 {
@@ -82,23 +88,43 @@
 .about__description {
   font-family: $font-ptmono;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 136%;
   color: $color-black-pearl;
   margin: 0;
 
-  &--start {
-    margin-bottom: 20px;
+  &--top {
+    margin-bottom: 22px;
+  }
+
+  &--bottom {
+    margin-top: -1px;
+  }
+
+  &--show {
+    margin-top: 22px;
   }
 
   @include vp-767 {
     font-size: 14px;
-    line-height: 19px;
+    line-height: 134.4%;
+
+    &--top {
+      margin-bottom: 21px;
+    }
+
+    &--bottom {
+      margin-top: 21px;
+    }
+
+    &--show {
+      margin-top: 21px;
+    }
   }
 }
 
 .about__button {
   width: 180px;
-  height: 45px;
+  padding: 14px 13px 13px 12px;
   border: 1px solid $color-deep-sky-blue;
   border-radius: 3px;
   font-family: $font-robotocondensed;
@@ -112,6 +138,11 @@
   background-color: inherit;
   cursor: pointer;
 
+  @include vp-767 {
+    width: 160px;
+    padding: 8px 15px 9px;
+  }
+
   @include hover {
     background-color: $color-deep-sky-blue;
     color: $color-alice-blue;
@@ -121,8 +152,23 @@
     }
   }
 
-  @include vp-767 {
-    width: 160px;
-    height: 35px;
+  &:disabled {
+    background-color: $color-dimgrey;
+    color: $color-linen;
+    border-color: $color-linen;
+    opacity: 1;
+    cursor: auto;
+
+    @include hover-focus {
+      border-color: $color-linen;
+      color: $color-linen;
+      background-color: $color-dimgrey;
+
+      &:active {
+        border-color: $color-linen;
+        color: $color-linen;
+        background-color: $color-dimgrey;
+      }
+    }
   }
 }

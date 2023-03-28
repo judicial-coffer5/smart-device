@@ -1,3 +1,15 @@
+.content {
+  min-height: calc(100vh - 280px);
+
+  @include vp-1023 {
+    min-height: calc(100vh - 465px);
+  }
+
+  @include vp-767 {
+    min-height: calc(100vh - 475px);
+  }
+}
+
 .wrapper {
   position: relative;
 

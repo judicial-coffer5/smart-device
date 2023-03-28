@@ -7,6 +7,7 @@ const descriptionToggle = () => {
       item.classList.remove('is-open');
       descriptionElements[0].classList.add('is-mobile');
       descriptionElements[1].classList.add('is-hidden');
+      descriptionElements[2].classList.add('is-hidden');
       buttonElement.textContent = 'Подробнее';
     } else {
       item.classList.remove('is-hidden');

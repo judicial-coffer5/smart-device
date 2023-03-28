@@ -1,33 +1,67 @@
+.advantages {
+  @include vp-767 {
+    padding: 50px 25px;
+  }
+}
+
 .advantages__list {
   display: grid;
   list-style-type: none;
-  grid-template-columns: vw-desktop(595px) vw-desktop(595px);
-  grid-template-rows: 300px 300px;
-  padding: 120px 0;
-  margin: 0;
-  justify-content: center;
-  gap: 30px 31px;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1264px;
+  padding: 121px 20px 120px 22px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 29px 32px;
 
   @include vp-1023 {
-    grid-template-columns: 320px 320px;
-    grid-template-rows: 360px 360px;
-    padding: 80px 8px 80px 0;
+    max-width: 718px;
+    padding: 80px 28px 80px 20px;
     gap: 30px;
   }
 
   @include vp-767 {
-    width: vw-mobile(270px);
-    margin: 0 auto;
+    min-width: 270px;
     display: flex;
     flex-direction: column;
-    padding: 50px 0;
+    padding: 0;
   }
 }
 
 .advantages__item {
-  padding: 40px 40px 35px;
-  outline: 1px solid $color-whisper;
-  border-left: 5px solid $color-deep-sky-blue;
+  position: relative;
+  padding: 39px 44px 59px;
+  border: 1px solid $color-whisper;
+  min-height: 300px;
+  word-wrap: break-word;
+
+  @include vp-1023 {
+    padding: 39px 32px 28px 44px;
+    min-height: 360px;
+
+    &--tag {
+      padding: 39px 31px 28px 45px;
+    }
+  }
+
+  @include vp-767 {
+    padding: 29px 26px 36px 29px;
+    min-height: 340px;
+
+    &--bottom {
+      min-height: 325px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 5px;
+    height: 100%;
+    background: $color-deep-sky-blue;
+  }
 
   @include hover {
     background-color: $color-deep-sky-blue;
@@ -40,39 +74,30 @@
       color: $color-alice-blue;
     }
 
-    & .advantages__image {
+    & .advantages__ic {
       color: $color-alice-blue;
-    }
-  }
-
-  @include vp-1023 {
-    padding: 40px 30px 32px 40px;
-  }
-
-  @include vp-767 {
-    padding: 30px 30px 35px 25px;
-    height: 340px;
-
-    &--bottom {
-      height: 325px;
     }
   }
 }
 
-.advantages__image {
+.advantages__ic {
   color: $color-deep-sky-blue;
 
   &--detective {
     margin-left: -5px;
+  }
 
-    @include vp-1023 {
+  @include vp-1023 {
+    &--detective {
       margin: 0;
     }
   }
 
   @include vp-767 {
-    width: 30px;
-    height: 30px;
+    & svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 
@@ -82,7 +107,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 140%;
-  margin: 13px 0 14px;
+  margin: 14px 0;
 
   @include vp-1023 {
     margin: 9px 0;
@@ -98,6 +123,7 @@
 
   @include vp-767 {
     font-size: 20px;
+    margin: 9px 0 10px;
 
     &--detective {
       margin: 12px 0 14px;
@@ -110,16 +136,11 @@
 }
 
 .advantages__description {
-  display: block;
-  min-height: 120px;
   font-family: $font-ptmono;
   font-size: 16px;
   line-height: 135%;
   color: $color-black-pearl;
-
-  @include vp-1023 {
-    min-height: 160px;
-  }
+  margin: 0;
 
   @include vp-767 {
     font-size: 14px;

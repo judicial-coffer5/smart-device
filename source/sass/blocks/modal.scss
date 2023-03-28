@@ -37,14 +37,14 @@
   font-size: 16px;
   line-height: 22px;
   color: $color-default-white;
-  margin: 0 0 38px;
+  margin: 0 0 37px;
   width: 380px;
 }
 
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 18px;
 }
 
 .modal__user {
@@ -117,6 +117,26 @@
         color: $color-black-pearl-2;
       }
     }
+
+    &:disabled {
+      background-color: $color-dimgrey;
+      color: $color-linen;
+      border-color: $color-linen;
+      opacity: 1;
+      cursor: auto;
+
+      @include hover-focus {
+        border-color: $color-linen;
+        color: $color-linen;
+        background-color: $color-dimgrey;
+
+        &:active {
+          border-color: $color-linen;
+          color: $color-linen;
+          background-color: $color-dimgrey;
+        }
+      }
+    }
   }
 
   &--checkbox {
@@ -139,6 +159,22 @@
   border-radius: 2px;
   width: 15px;
   height: 15px;
+
+  @include hover-focus {
+    border-color: $color-apricot;
+
+    &:active {
+      border-color: $color-vermilion;
+    }
+
+    & .modal__checkbox-icon {
+      color: $color-apricot;
+
+      &:active {
+        color: $color-vermilion;
+      }
+    }
+  }
 }
 
 .modal__checkbox-icon {
