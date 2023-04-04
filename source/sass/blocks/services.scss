@@ -88,6 +88,16 @@
     padding: 26px 30px;
     max-width: 270px;
   }
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: $color-cerulean;
+  }
 }
 
 .services__link {
@@ -135,56 +145,6 @@
     font-size: 18px;
     line-height: 167%;
     width: 135px;
-  }
-}
-
-.services__background-wrapper {
-  &--tablet {
-    display: none;
-  }
-
-  &--mobile {
-    display: none;
-  }
-
-  @include vp-1023 {
-    &--desktop {
-      display: none;
-    }
-
-    &--tablet {
-      display: block;
-    }
-  }
-
-  @include vp-767 {
-    &--tablet {
-      display: none;
-    }
-
-    &--mobile {
-      display: block;
-    }
-  }
-}
-
-.services__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background-color: $color-cerulean;
-
-  @include retina {
-    &--dpr-1 {
-      display: none;
-    }
-
-    &--dpr-2 {
-      display: block;
-    }
   }
 }
 

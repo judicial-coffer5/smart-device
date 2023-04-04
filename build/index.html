@@ -8,6 +8,10 @@
   <meta name="description" content="Печатные платы - производство и монтаж, поставка комплектующих, блоков и модулей.">
   <title>Smart Device</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="./fonts/robotocondensed-regular.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/robotocondensed-bold.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/roboto.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/ptmono.woff" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/robotocondensed-regular.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/robotocondensed-bold.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/roboto.woff2" as="font" crossorigin="anonymous">
@@ -20,16 +24,10 @@
       <div class="header__wrapper">
         <div class="header__logo-wrapper">
           <a class="header__logo" href="index.html" aria-label="Smart Device">
-            <span class="logo">
-              <svg width="215" height="55" aria-hidden="true" focusable="false">
-                <use xlink:href="./img/sprite.svg#logo"></use>
-              </svg>
-            </span>
-            <span class="logo-mobile">
-              <svg width="35" height="35" aria-hidden="true" focusable="false">
-                <use xlink:href="./img/sprite.svg#logo-mobile"></use>
-              </svg>
-            </span>
+            <picture>
+              <source media="(max-width: 769px)" srcset="./img/svg/logo-mobile.svg">
+              <img src="./img/svg/logo.svg" aria-hidden="true" focusable="false" alt="Smart Device">
+            </picture>
           </a>
         </div>
         <ul class="header__list">
@@ -69,10 +67,12 @@
             <span class="intro__button-text intro__button-text--mobile">Бесплатная консультация</span>
           </a>
         </div>
-        <img class="intro__background intro__background--dpr-1" src="./img/background/background-desktop.jpg"
-          width="1920" height="880" alt="Фоновое изображение" aria-hidden="true">
-        <img class="intro__background intro__background--dpr-2" src="./img/background/background-desktop@2x.jpg"
-          width="1920" height="880" alt="Фоновое изображение" aria-hidden="true">
+        <picture>
+          <source type="image/webp"
+            srcset="./img/background/background-desktop.webp 1x, ./img/background/background-desktop@2x.webp 2x">
+          <img src="./img/background/background-desktop.jpg" srcset="./img/background/background-desktop@2x.jpg 2x"
+            alt="">
+        </picture>
       </section>
       <section class="advantages">
         <h2 class="visually-hidden">Преимущества</h2>
@@ -123,8 +123,10 @@
       </section>
       <section class="about">
         <div class="about__image-wrapper">
-          <img class="about__image about__image--dpr-1" src="./img/2022.png" width="150" height="320" alt="2022">
-          <img class="about__image about__image--dpr-2" src="./img/2022@2x.png" width="150" height="320" alt="2022">
+          <picture>
+            <source type="image/webp" srcset="./img/2022.webp 1x, ./img/2022@2x.webp 2x">
+            <img src="./img/2022.png" srcset="./img/2022p@2x.png 2x" alt="2022">
+          </picture>
         </div>
         <div class="about__inner">
           <h2 class="about__title">О компании</h2>
@@ -167,27 +169,24 @@
                 <svg class="services__button" width="4" height="8" aria-hidden="true" focusable="false">
                   <use xlink:href="./img/sprite.svg#arrow"></use>
                 </svg>
-                <div class="services__background-wrapper services__background-wrapper--desktop">
-                  <img class="services__background services__background--dpr-1" src="./img/cards/сard-background-1.jpg"
-                    width="350" height="650" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-1@2x.jpg" width="350" height="650" alt="Фоновое изображение">
-                </div>
-                <div class="services__background-wrapper services__background-wrapper--tablet">
-                  <img class="services__background services__background--dpr-1"
-                    src="./img/cards/сard-background-tablet-1.jpg" width="670" height="250" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-tablet-1@2x.jpg" width="670" height="250"
-                    alt="Фоновое изображение">
-                </div>
-                <div class="services__background-wrapper services__background-wrapper--mobile">
-                  <img class="services__background services__background--dpr-1"
-                    src="./img/cards/сard-background-mobile-1.jpg" width="270" height="250" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-mobile-1@2x.jpg" width="270" height="250"
-                    alt="Фоновое изображение">
-                </div>
               </a>
+              <picture>
+                <source type="image/webp" media="(max-width: 769px) and (min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-mobile-1@2x.webp">
+                <source type="image/webp" media="(max-width: 769px)" srcset="./img/cards/сard-background-mobile-1.webp">
+                <source type="image/webp" media="(max-width: 1919px) and (min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-tablet-1@2x.webp">
+                <source type="image/webp" media="(max-width: 1919px)"
+                  srcset="./img/cards/сard-background-tablet-1.webp">
+                <source type="image/webp" media="(min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-1@2x.webp">
+                <source type="image/webp" srcset="./img/cards/сard-background-1.webp">
+                <source media="(max-width: 769px)"
+                  srcset="./img/cards/сard-background-mobile-1.jpg 1x, ./img/cards/сard-background-mobile-1@2x.jpg 2x">
+                <source media="(max-width: 1919px)"
+                  srcset="./img/cards/сard-background-tablet-1.jpg 1x, ./img/cards/сard-background-tablet-1@2x.jpg 2x">
+                <img src="./img/cards/сard-background-1.jpg" srcset="./img/cards/сard-background-1@2x.jpg 2x" alt="">
+              </picture>
             </li>
             <li class="services__item">
               <a class="services__link" href="#">
@@ -195,55 +194,49 @@
                 <svg class="services__button" width="4" height="8" aria-hidden="true" focusable="false">
                   <use xlink:href="./img/sprite.svg#arrow"></use>
                 </svg>
-                <div class="services__background-wrapper services__background-wrapper--desktop">
-                  <img class="services__background services__background--dpr-1" src="./img/cards/сard-background-2.jpg"
-                    width="350" height="650" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-2@2x.jpg" width="350" height="650" alt="Фоновое изображение">
-                </div>
-                <div class="services__background-wrapper services__background-wrapper--tablet">
-                  <img class="services__background services__background--dpr-1"
-                    src="./img/cards/сard-background-tablet-2.jpg" width="670" height="250" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-tablet-2@2x.jpg" width="670" height="250"
-                    alt="Фоновое изображение">
-                </div>
-                <div class="services__background-wrapper services__background-wrapper--mobile">
-                  <img class="services__background services__background--dpr-1"
-                    src="./img/cards/сard-background-mobile-2.jpg" width="270" height="250" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-mobile-2@2x.jpg" width="270" height="250"
-                    alt="Фоновое изображение">
-                </div>
               </a>
+              <picture>
+                <source type="image/webp" media="(max-width: 769px) and (min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-mobile-2@2x.webp">
+                <source type="image/webp" media="(max-width: 769px)" srcset="./img/cards/сard-background-mobile-2.webp">
+                <source type="image/webp" media="(max-width: 1919px) and (min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-tablet-2@2x.webp">
+                <source type="image/webp" media="(max-width: 1919px)"
+                  srcset="./img/cards/сard-background-tablet-2.webp">
+                <source type="image/webp" media="(min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-2@2x.webp">
+                <source type="image/webp" srcset="./img/cards/сard-background-2.webp">
+                <source media="(max-width: 769px)"
+                  srcset="./img/cards/сard-background-mobile-2.jpg 1x, ./img/cards/сard-background-mobile-2@2x.jpg 2x">
+                <source media="(max-width: 1919px)"
+                  srcset="./img/cards/сard-background-tablet-2.jpg 2x, ./img/cards/сard-background-tablet-2@2x.jpg 2x">
+                <img src="./img/cards/сard-background-2.jpg" srcset="./img/cards/сard-background-2@2x.jpg 2x" alt="">
+              </picture>
             </li>
             <li class="services__item">
+              <h3 class="services__item-title">Комплектующие для светотехники</h3>
               <a class="services__link" href="#">
                 <svg class="services__button" width="4" height="8" aria-hidden="true" focusable="false">
                   <use xlink:href="./img/sprite.svg#arrow"></use>
                 </svg>
-                <h3 class="services__item-title">Комплектующие для светотехники</h3>
-                <div class="services__background-wrapper services__background-wrapper--desktop">
-                  <img class="services__background services__background--dpr-1" src="./img/cards/сard-background-3.jpg"
-                    width="350" height="650" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-3@2x.jpg" width="350" height="650" alt="Фоновое изображение">
-                </div>
-                <div class="services__background-wrapper services__background-wrapper--tablet">
-                  <img class="services__background services__background--dpr-1"
-                    src="./img/cards/сard-background-tablet-3.jpg" width="670" height="250" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-tablet-3@2x.jpg" width="670" height="250"
-                    alt="Фоновое изображение">
-                </div>
-                <div class="services__background-wrapper services__background-wrapper--mobile">
-                  <img class="services__background services__background--dpr-1"
-                    src="./img/cards/сard-background-mobile-3.jpg" width="270" height="250" alt="Фоновое изображение">
-                  <img class="services__background services__background--dpr-2"
-                    src="./img/cards/сard-background-mobile-3@2x.jpg" width="270" height="250"
-                    alt="Фоновое изображение">
-                </div>
               </a>
+              <picture>
+                <source type="image/webp" media="(max-width: 769px) and (min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-mobile-3@2x.webp">
+                <source type="image/webp" media="(max-width: 769px)" srcset="./img/cards/сard-background-mobile-3.webp">
+                <source type="image/webp" media="(max-width: 1919px) and (min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-tablet-3@2x.webp">
+                <source type="image/webp" media="(max-width: 1919px)"
+                  srcset="./img/cards/сard-background-tablet-3.webp">
+                <source type="image/webp" media="(min-resolution: 2dppx)"
+                  srcset="./img/cards/сard-background-3@2x.webp">
+                <source type="image/webp" srcset="./img/cards/сard-background-3.webp">
+                <source media="(max-width: 769px)"
+                  srcset="./img/cards/сard-background-mobile-3.jpg 1x, ./img/cards/сard-background-mobile-3@2x.jpg 2x">
+                <source media="(max-width: 1919px)"
+                  srcset="./img/cards/сard-background-tablet-3.jpg 1x, ./img/cards/сard-background-tablet-3@2x.jpg 2x">
+                <img src="./img/cards/сard-background-3.jpg" srcset="./img/cards/сard-background-3@2x.jpg 2x" alt="">
+              </picture>
             </li>
           </ul>
         </div>
@@ -251,44 +244,41 @@
       <section class="form" id="form">
         <div class="form__inner">
           <div class="form__image-wrapper">
-            <img class="form__image form__image--dpr-1" src="./img/paper-airplane.png" width="510" height="285"
-              alt="Бумажный самолетик">
-            <img class="form__image form__image--dpr-2" src="./img/paper-airplane@2x.png" width="510" height="285"
-              alt="Бумажный самолетик">
+            <picture>
+              <source type="image/webp" srcset="./img/paper-airplane.webp 1x, ./img/paper-airplane@2x.webp 2x">
+              <img src="./img/paper-airplane.png" srcset="./img/paper-airplane@2x.png 2x" alt="2022">
+            </picture>
           </div>
           <div class="form__container">
             <h2 class="form__title">Остались вопросы? Задайте их нам!</h2>
             <p class="form__description">Мы проконсультируем Вас бесплатно</p>
-            <form class="form__from" action="https://echo.htmlacademy.ru/" method="post">
-              <div class="form__user-wrapper">
-                <div class="form__user">
-                  <label class="visually-hidden" for="user-name">Имя</label>
-                  <input id="user-name" type="text" name="name" placeholder="Имя" required>
-                </div>
-                <div class="form__user">
-                  <label class="visually-hidden" for="user-tel">Телефон</label>
-                  <input id="user-tel" type="tel" name="tel" placeholder="Телефон" required data-tel-input>
-                </div>
-              </div>
-              <div class="form__textarea">
+            <form class="form__content" action="https://echo.htmlacademy.ru/" method="post">
+              <fieldset class="form__fieldset form__fieldset--name">
+                <label class="visually-hidden" for="user-name">Имя</label>
+                <input id="user-name" type="text" name="name" placeholder="Имя" required>
+              </fieldset>
+              <fieldset class="form__fieldset form__fieldset--phone">
+                <label class="visually-hidden" for="user-tel">Телефон</label>
+                <input id="user-tel" type="tel" name="tel" placeholder="Телефон" required data-tel-input>
+              </fieldset>
+              <fieldset class="form__fieldset form__fieldset--textarea">
                 <label class="visually-hidden" for="user-question">Ваш вопрос</label>
                 <textarea id="user-question" name="question" placeholder="Ваш вопрос"></textarea>
-              </div>
-              <div class="form__end">
-                <div class="form__button">
-                  <input type="submit" value="Задать вопрос">
-                </div>
-                <div class="form__checkbox" data-checkbox-field>
-                  <input class="visually-hidden" id="checkbox" type="checkbox" checked required data-checkbox-input>
-                  <span class="form__checkbox-in" data-checkbox>
-                    <svg class="form__checkbox-icon is-checked" width="9" height="6" aria-hidden="true"
-                      focusable="false" data-checkbox-icon>
+              </fieldset>
+              <fieldset class="form__fieldset form__fieldset--button">
+                <input type="submit" value="Задать вопрос">
+              </fieldset>
+              <fieldset class="form__fieldset form__fieldset--checkbox" data-checkbox-field>
+                <input class="visually-hidden" id="checkbox" type="checkbox" checked required data-checkbox-input>
+                <span class="form__checkbox-in" data-checkbox>
+                  <span class="form__checkbox-icon is-checked" data-checkbox-icon>
+                    <svg width="9" height="6" aria-hidden="true" focusable="false">
                       <use xlink:href="./img/sprite.svg#checkbox"></use>
                     </svg>
                   </span>
-                  <label for="checkbox" class="form__checkbox-text">Я согласен на обработку персональных данных</label>
-                </div>
-              </div>
+                </span>
+                <label for="checkbox" class="form__checkbox-text">Я согласен на обработку персональных данных</label>
+              </fieldset>
             </form>
           </div>
         </div>
@@ -299,11 +289,7 @@
     <div class="footer__container">
       <div class="footer__info">
         <a class="footer__logo" href="index.html" aria-label="Smart Device">
-          <span class="logo logo--footer">
-            <svg width="215" height="55" aria-hidden="true" focusable="false">
-              <use xlink:href="./img/sprite.svg#logo"></use>
-            </svg>
-          </span>
+          <img src="./img/svg/logo.svg" aria-hidden="true" focusable="false" alt="Smart Device">
         </a>
         <ul class="footer__social-links">
           <li class="footer__social-item">
