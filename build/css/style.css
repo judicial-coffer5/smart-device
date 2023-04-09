@@ -1171,7 +1171,6 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 39px;
   word-break: break-word;
 }
 
@@ -1180,11 +1179,7 @@ button,
   font-size: 16px;
   line-height: 136%;
   color: #041827;
-  margin: 0;
-}
-
-.about__description-main {
-  margin-bottom: 21px;
+  margin: 0 0 21px;
 }
 
 .about__button {
@@ -1202,6 +1197,7 @@ button,
   color: #00b2ff;
   background-color: inherit;
   cursor: pointer;
+  margin-top: 18px;
 }
 
 .about__button:disabled {
@@ -2190,8 +2186,8 @@ button,
     margin: 0 0 12px;
   }
 
-  .about__description-list {
-    margin-bottom: 17px;
+  .about__button {
+    margin-top: -4px;
   }
 
   .services__inner {
@@ -2531,10 +2527,6 @@ button,
     margin: 2px 0 13px;
   }
 
-  .about__description-list {
-    margin-bottom: 13px;
-  }
-
   .about__description-list p {
     font-size: 14px;
     line-height: 134.4%;
@@ -2543,6 +2535,7 @@ button,
   .about__button {
     width: 160px;
     padding: 8px 15px 9px;
+    margin-top: -8px;
   }
 
   .services__inner {
