@@ -1,4 +1,3 @@
-const buttonElements = document.querySelectorAll('[data-button]');
 const listElements = document.querySelectorAll('[data-list]');
 const iconElements = document.querySelectorAll('[data-button-icon]');
 const sectionElements = document.querySelectorAll('[data-section]');
@@ -39,7 +38,7 @@ const listToggle = (e) => {
 };
 
 const footerActions = () => {
-  buttonElements.forEach((button) => {
+  iconElements.forEach((button) => {
     button.addEventListener('click', (e) => listToggle(e));
   });
   sectionElements.forEach((section) => {

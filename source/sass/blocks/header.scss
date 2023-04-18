@@ -13,6 +13,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 60px;
+
+  @include vp-1023 {
+    padding: 0;
+  }
 }
 
 .header__logo-wrapper {
@@ -135,7 +140,7 @@
 }
 
 .header__button-wrapper {
-  padding: 35px 60px 45px 0;
+  padding: 35px 0 45px;
 
   @include vp-1023 {
     display: none;

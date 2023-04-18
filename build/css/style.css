@@ -689,6 +689,7 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-right: 60px;
 }
 
 .header__logo-wrapper {
@@ -775,7 +776,7 @@ button,
 }
 
 .header__button-wrapper {
-  padding: 35px 60px 45px 0;
+  padding: 35px 0 45px;
 }
 
 .header__button {
@@ -991,6 +992,7 @@ button,
   background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0)));
   background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
   background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
+  position: relative;
 }
 
 .intro img {
@@ -998,7 +1000,7 @@ button,
   top: 0;
   left: 0;
   z-index: -100;
-  height: 880px;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1088,12 +1090,8 @@ button,
   position: relative;
   padding: 39px 44px 59px;
   border: 1px solid #ebebeb;
-  min-height: 300px;
   word-wrap: break-word;
-}
-
-.advantages__item--two {
-  margin-left: -1px;
+  min-height: 300px;
 }
 
 .advantages__item p {
@@ -1102,6 +1100,10 @@ button,
   line-height: 135%;
   color: #041827;
   margin: 0;
+}
+
+.advantages__item--hired {
+  margin-left: -1px;
 }
 
 .advantages__item::after {
@@ -1254,15 +1256,15 @@ button,
   padding: 0;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .services__item {
   position: relative;
-  padding: 47px 40px;
-  max-width: 350px;
-  width: 100%;
-  min-height: 650px;
-  word-break: break-word;
+  padding: 47px 137px 543px 40px;
+  width: 350px;
   cursor: pointer;
   background-color: #026693;
 }
@@ -1309,7 +1311,6 @@ button,
   color: #ffffff;
   margin: 0;
   z-index: 2;
-  max-width: 173px;
 }
 
 .services__button {
@@ -2012,8 +2013,11 @@ button,
   }
 
   .container {
-    max-width: 770px;
     padding: 0 50px;
+  }
+
+  .header__wrapper {
+    padding: 0;
   }
 
   .header__logo-wrapper {
@@ -2112,7 +2116,6 @@ button,
   }
 
   .intro img {
-    height: 640px;
     -o-object-position: 19.7%;
     object-position: 19.7%;
   }
@@ -2144,15 +2147,15 @@ button,
 
   .advantages__item {
     padding: 39px 32px 28px 44px;
-    min-height: 360px;
     min-width: 320px;
+    min-height: 360px;
   }
 
-  .advantages__item--tag {
+  .advantages__item--hired {
     padding: 39px 31px 28px 45px;
   }
 
-  .advantages__item--two {
+  .advantages__item--tag {
     padding: 39px 31px 28px 45px;
   }
 
@@ -2199,21 +2202,12 @@ button,
   }
 
   .services__list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     gap: 30px;
   }
 
   .services__item {
-    padding: 37px 45px;
-    max-width: 670px;
-    min-height: 250px;
-  }
-
-  .services__item-title {
-    max-width: 150px;
+    width: 670px;
+    padding: 37px 475px 153px 45px;
   }
 
   .services__button {
@@ -2301,7 +2295,6 @@ button,
   }
 
   .container {
-    max-width: 320px;
     padding: 0 25px;
   }
 
@@ -2427,12 +2420,14 @@ button,
   }
 
   .intro img {
-    height: 560px;
     -o-object-position: 25.5%;
     object-position: 25.5%;
   }
 
   .intro__wrapper {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 150px 0 190px;
   }
 
@@ -2479,20 +2474,23 @@ button,
 
   .advantages__item p {
     font-size: 14px;
+    min-height: 190px;
   }
 
   .advantages__item {
-    padding: 29px 26px 36px 29px;
-    min-height: 340px;
+    padding: 30px 29px 34px;
     min-width: 270px;
+    min-height: auto;
+    width: 100%;
   }
 
-  .advantages__item--bottom {
-    min-height: 325px;
-  }
-
-  .advantages__item--two {
+  .advantages__item--hired {
     margin: 0;
+  }
+
+  .advantages__item--detective p,
+  .advantages__item--tag p {
+    min-height: 140px;
   }
 
   .advantages__ic svg {
@@ -2560,14 +2558,13 @@ button,
   }
 
   .services__item {
-    padding: 26px 30px;
-    max-width: 270px;
+    padding: 26px 105px 164px 30px;
+    width: 270px;
   }
 
   .services__item-title {
     font-size: 18px;
     line-height: 167%;
-    width: 135px;
   }
 
   .services__button {
