@@ -53,34 +53,39 @@
 }
 
 .services__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   list-style-type: none;
   gap: 85px;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 
   @include vp-1023 {
+    display: flex;
+    flex-direction: column;
     gap: 30px;
   }
 }
 
 .services__item {
   position: relative;
-  padding: 47px 137px 543px 40px;
-  width: 350px;
+  padding: 47px 40px;
+  height: 650px;
+  max-width: 350px;
   cursor: pointer;
   background-color: $color-cerulean;
 
   @include vp-1023 {
-    width: 670px;
+    height: 250px;
+    max-width: 670px;
     padding: 37px 475px 153px 45px;
   }
 
   @include vp-767 {
     padding: 26px 105px 164px 30px;
-    width: 270px;
+    max-width: 270px;
   }
 
   @include hover-focus {
@@ -157,5 +162,11 @@
     padding: 15px 15px 15px 18px;
     width: 40px;
     height: 40px;
+  }
+}
+
+.service__br-title {
+  @include vp-1023 {
+    display: none;
   }
 }

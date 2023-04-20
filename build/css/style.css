@@ -1247,15 +1247,17 @@ button,
 }
 
 .services__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   list-style-type: none;
   gap: 85px;
   margin: 0;
   padding: 0;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1263,8 +1265,9 @@ button,
 
 .services__item {
   position: relative;
-  padding: 47px 137px 543px 40px;
-  width: 350px;
+  padding: 47px 40px;
+  height: 650px;
+  max-width: 350px;
   cursor: pointer;
   background-color: #026693;
 }
@@ -2202,16 +2205,28 @@ button,
   }
 
   .services__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     gap: 30px;
   }
 
   .services__item {
-    width: 670px;
+    height: 250px;
+    max-width: 670px;
     padding: 37px 475px 153px 45px;
   }
 
   .services__button {
     right: 0;
+  }
+
+  .service__br-title {
+    display: none;
   }
 
   .form::before {
@@ -2220,6 +2235,9 @@ button,
 
   .form__inner {
     padding: 50px 0 125px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .form__image-wrapper {
@@ -2425,9 +2443,6 @@ button,
   }
 
   .intro__wrapper {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     padding: 150px 0 190px;
   }
 
@@ -2440,7 +2455,7 @@ button,
   .intro__description {
     font-size: 14px;
     line-height: 22px;
-    width: 270px;
+    width: 100%;
     margin: 0 0 44px -1px;
   }
 
@@ -2559,7 +2574,7 @@ button,
 
   .services__item {
     padding: 26px 105px 164px 30px;
-    width: 270px;
+    max-width: 270px;
   }
 
   .services__item-title {

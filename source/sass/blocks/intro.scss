@@ -34,7 +34,6 @@
   }
 
   @include vp-767 {
-    align-items: center;
     padding: 150px 0 190px;
   }
 }
@@ -79,7 +78,7 @@
   @include vp-767 {
     font-size: 14px;
     line-height: 22px;
-    width: 270px;
+    width: 100%;
     margin: 0 0 44px -1px;
   }
 }
