@@ -849,6 +849,7 @@ button,
 }
 
 .footer__logo {
+  width: 215px;
   display: inline-block;
   line-height: 0;
 }
@@ -940,6 +941,7 @@ button,
 }
 
 .footer__title {
+  position: relative;
   margin: 0 0 20px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
@@ -985,6 +987,10 @@ button,
 }
 
 .footer__button {
+  display: none;
+}
+
+.footer__title-wrapper {
   display: none;
 }
 
@@ -1330,6 +1336,10 @@ button,
   border: 1px solid #00b2ff;
 }
 
+.service__item-br {
+  display: none;
+}
+
 .form {
   background: #00b2ff;
   position: relative;
@@ -1360,10 +1370,12 @@ button,
   padding: 170px 0 250px;
   z-index: 2;
   margin-top: -2px;
+  gap: 30px;
 }
 
 .form__image-wrapper {
-  min-width: 510px;
+  max-width: 510px;
+  width: 100%;
 }
 
 .form__image-wrapper img {
@@ -1371,9 +1383,8 @@ button,
 }
 
 .form__container {
-  max-width: 580px;
+  min-width: 580px;
   margin-right: 10px;
-  width: 100%;
 }
 
 .form__title {
@@ -1602,6 +1613,11 @@ button,
   margin: 13px 0 0 10px;
 }
 
+.form__fieldset--checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
 .form__checkbox-in {
   position: relative;
   border: 1px solid #ffffff;
@@ -1656,6 +1672,11 @@ button,
   background: rgba(3, 16, 27, 0.7019607843);
 }
 
+.modal__wrapper {
+  margin: 0 auto;
+  width: 500px;
+}
+
 .modal__inner {
   position: fixed;
   width: 500px;
@@ -1663,7 +1684,6 @@ button,
   border-radius: 3px;
   padding: 38px 40px 45px;
   top: 146px;
-  left: 702px;
   z-index: 10000;
 }
 
@@ -1753,6 +1773,11 @@ button,
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
+}
+
+.modal__field--checkbox input {
+  width: 16px;
+  height: 16px;
 }
 
 .modal__field textarea {
@@ -2217,16 +2242,21 @@ button,
 
   .services__item {
     height: 250px;
+    min-width: 670px;
     max-width: 670px;
-    padding: 37px 475px 153px 45px;
+    padding: 37px 45px;
   }
 
   .services__button {
     right: 0;
   }
 
-  .service__br-title {
+  .service__item-br-desktop {
     display: none;
+  }
+
+  .service__item-br {
+    display: block;
   }
 
   .form::before {
@@ -2234,6 +2264,7 @@ button,
   }
 
   .form__inner {
+    gap: 0;
     padding: 50px 0 125px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -2246,6 +2277,7 @@ button,
 
   .form__container {
     min-width: 670px;
+    width: 100%;
     margin: 0;
   }
 
@@ -2376,7 +2408,6 @@ button,
   }
 
   .footer__links {
-    position: relative;
     border-bottom: 1px solid #fafeff;
     padding: 20px 0 19px;
     max-width: 100%;
@@ -2385,15 +2416,11 @@ button,
 
   .footer__title {
     margin-bottom: 0;
-    text-align: center;
-  }
-
-  .footer__title--navigation {
-    padding-right: 154px;
+    text-align: left;
   }
 
   .footer__title--contacts {
-    padding-right: 195px;
+    margin-left: -2px;
   }
 
   .footer__item--address {
@@ -2423,18 +2450,27 @@ button,
   }
 
   .footer__button {
-    position: absolute;
-    top: 20px;
-    right: 26px;
     display: block;
     background-color: inherit;
     border: none;
     padding: 0;
     cursor: pointer;
+    margin-right: 1px;
   }
 
   .footer__button--bottom {
-    right: 27px;
+    margin-right: 2px;
+  }
+
+  .footer__title-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 269px;
+    margin: 0 auto;
   }
 
   .intro img {
@@ -2573,8 +2609,9 @@ button,
   }
 
   .services__item {
-    padding: 26px 105px 164px 30px;
-    max-width: 270px;
+    padding: 26px 30px;
+    min-width: 270px;
+    width: 100%;
   }
 
   .services__item-title {

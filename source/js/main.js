@@ -6,6 +6,8 @@ import {onCheckboxClick} from './modules/checkbox';
 import {footerActions} from './modules/footer-list';
 import {onAboutButtonClick} from './modules/about-list';
 import {phoneInputActions} from './modules/phone-input';
+import {modalTabActions} from './modules/popup-focus';
+import {overlayClick} from './modules/overlay-click';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
   footerActions();
   onAboutButtonClick();
   phoneInputActions();
+  modalTabActions();
+  overlayClick();
 
   // ---------------------------------
 
