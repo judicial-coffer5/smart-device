@@ -79,9 +79,58 @@
   }
 
   &--checkbox {
+    display: flex;
+    gap: 10px;
+    margin: 0 9px;
+    cursor: pointer;
+
     & input {
       width: 16px;
       height: 16px;
+    }
+  }
+
+  &--button {
+    background: $color-black-pearl-2;
+
+    & input {
+      font-family: $font-robotocondensed;
+      font-weight: 700;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      height: 45px;
+      cursor: pointer;
+
+      @include hover-focus {
+        background-color: $color-rhino;
+
+        &:active {
+          background-color: $color-alice-blue;
+          color: $color-black-pearl-2;
+        }
+      }
+
+      &:disabled {
+        background-color: $color-dimgrey;
+        color: $color-linen;
+        border-color: $color-linen;
+        opacity: 1;
+        cursor: auto;
+
+        @include hover-focus {
+          border-color: $color-linen;
+          color: $color-linen;
+          background-color: $color-dimgrey;
+
+          &:active {
+            border-color: $color-linen;
+            color: $color-linen;
+            background-color: $color-dimgrey;
+          }
+        }
+      }
     }
   }
 }
@@ -107,59 +156,6 @@
   }
 }
 
-.modal__field {
-  &--button {
-    background: $color-black-pearl-2;
-  }
-
-  &--button input {
-    font-family: $font-robotocondensed;
-    font-weight: 700;
-    line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    height: 45px;
-    cursor: pointer;
-
-    @include hover-focus {
-      background-color: $color-rhino;
-
-      &:active {
-        background-color: $color-alice-blue;
-        color: $color-black-pearl-2;
-      }
-    }
-
-    &:disabled {
-      background-color: $color-dimgrey;
-      color: $color-linen;
-      border-color: $color-linen;
-      opacity: 1;
-      cursor: auto;
-
-      @include hover-focus {
-        border-color: $color-linen;
-        color: $color-linen;
-        background-color: $color-dimgrey;
-
-        &:active {
-          border-color: $color-linen;
-          color: $color-linen;
-          background-color: $color-dimgrey;
-        }
-      }
-    }
-  }
-
-  &--checkbox {
-    display: flex;
-    gap: 10px;
-    margin: 0 9px;
-    cursor: pointer;
-  }
-}
-
 .modal__end {
   display: flex;
   gap: 20px;
@@ -178,6 +174,14 @@
 
     &:active {
       border-color: $color-vermilion;
+    }
+
+    & + .modal__checkbox-text {
+      color: $color-apricot;
+
+      &:active {
+        color: $color-vermilion;
+      }
     }
 
     & .modal__checkbox-icon {

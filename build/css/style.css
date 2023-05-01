@@ -1635,6 +1635,14 @@ button,
   border-color: #ff4d00;
 }
 
+.form__checkbox-in.focus-visible:focus + .form__checkbox-text {
+  color: #ffc5ac;
+}
+
+.form__checkbox-in.focus-visible:focus + .form__checkbox-text:active {
+  color: #ff4d00;
+}
+
 .form__checkbox-in.focus-visible:focus .form__checkbox-icon {
   color: #ffc5ac;
 }
@@ -1775,9 +1783,62 @@ button,
   color: #ffffff;
 }
 
+.modal__field--checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 0 9px;
+  cursor: pointer;
+}
+
 .modal__field--checkbox input {
   width: 16px;
   height: 16px;
+}
+
+.modal__field--button {
+  background: #041427;
+}
+
+.modal__field--button input {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  height: 45px;
+  cursor: pointer;
+}
+
+.modal__field--button input.focus-visible:focus {
+  background-color: #364352;
+}
+
+.modal__field--button input.focus-visible:focus:active {
+  background-color: #f2f5f6;
+  color: #041427;
+}
+
+.modal__field--button input:disabled {
+  background-color: #696969;
+  color: #faf0e6;
+  border-color: #faf0e6;
+  opacity: 1;
+  cursor: auto;
+}
+
+.modal__field--button input:disabled.focus-visible:focus {
+  border-color: #faf0e6;
+  color: #faf0e6;
+  background-color: #696969;
+}
+
+.modal__field--button input:disabled.focus-visible:focus:active {
+  border-color: #faf0e6;
+  color: #faf0e6;
+  background-color: #696969;
 }
 
 .modal__field textarea {
@@ -1829,59 +1890,6 @@ button,
   color: #ffffff;
 }
 
-.modal__field--button {
-  background: #041427;
-}
-
-.modal__field--button input {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 700;
-  line-height: 19px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  height: 45px;
-  cursor: pointer;
-}
-
-.modal__field--button input.focus-visible:focus {
-  background-color: #364352;
-}
-
-.modal__field--button input.focus-visible:focus:active {
-  background-color: #f2f5f6;
-  color: #041427;
-}
-
-.modal__field--button input:disabled {
-  background-color: #696969;
-  color: #faf0e6;
-  border-color: #faf0e6;
-  opacity: 1;
-  cursor: auto;
-}
-
-.modal__field--button input:disabled.focus-visible:focus {
-  border-color: #faf0e6;
-  color: #faf0e6;
-  background-color: #696969;
-}
-
-.modal__field--button input:disabled.focus-visible:focus:active {
-  border-color: #faf0e6;
-  color: #faf0e6;
-  background-color: #696969;
-}
-
-.modal__field--checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin: 0 9px;
-  cursor: pointer;
-}
-
 .modal__end {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1907,6 +1915,14 @@ button,
 
 .modal__checkbox.focus-visible:focus:active {
   border-color: #ff4d00;
+}
+
+.modal__checkbox.focus-visible:focus + .modal__checkbox-text {
+  color: #ffc5ac;
+}
+
+.modal__checkbox.focus-visible:focus + .modal__checkbox-text:active {
+  color: #ff4d00;
 }
 
 .modal__checkbox.focus-visible:focus .modal__checkbox-icon {
@@ -2042,6 +2058,10 @@ button,
 
   .container {
     padding: 0 50px;
+  }
+
+  .header {
+    position: absolute;
   }
 
   .header__wrapper {
@@ -2877,6 +2897,14 @@ button,
     border-color: #ff4d00;
   }
 
+  .form__checkbox-in:hover:not(.focus-visible) + .form__checkbox-text {
+    color: #ffc5ac;
+  }
+
+  .form__checkbox-in:hover:not(.focus-visible) + .form__checkbox-text:active {
+    color: #ff4d00;
+  }
+
   .form__checkbox-in:hover:not(.focus-visible) .form__checkbox-icon {
     color: #ffc5ac;
   }
@@ -2912,6 +2940,14 @@ button,
 
   .modal__checkbox:hover:not(.focus-visible):active {
     border-color: #ff4d00;
+  }
+
+  .modal__checkbox:hover:not(.focus-visible) + .modal__checkbox-text {
+    color: #ffc5ac;
+  }
+
+  .modal__checkbox:hover:not(.focus-visible) + .modal__checkbox-text:active {
+    color: #ff4d00;
   }
 
   .modal__checkbox:hover:not(.focus-visible) .modal__checkbox-icon {

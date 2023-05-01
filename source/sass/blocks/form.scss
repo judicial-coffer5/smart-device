@@ -315,6 +315,14 @@
       border-color: $color-vermilion;
     }
 
+    & + .form__checkbox-text {
+      color: $color-apricot;
+
+      &:active {
+        color: $color-vermilion;
+      }
+    }
+
     & .form__checkbox-icon {
       color: $color-apricot;
 

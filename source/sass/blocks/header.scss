@@ -7,6 +7,10 @@
   position: fixed;
   width: 100%;
   background: $header-background;
+
+  @include vp-1023 {
+    position: absolute;
+  }
 }
 
 .header__wrapper {
