@@ -49,6 +49,12 @@ const onPhoneInput = (e) => {
     }
   }
   input.value = formattedInputValue;
+
+  if (inputNumbersValue.length < 11) {
+    input.setCustomValidity('Введите корректный номер телефона');
+  } else {
+    input.setCustomValidity('');
+  }
 };
 
 const onPhoneKeyDown = (e) => {

@@ -1611,6 +1611,33 @@ button,
   align-items: center;
   grid-area: checkbox;
   margin: 13px 0 0 10px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.form__fieldset--checkbox.focus-visible:focus .form__checkbox-text {
+  color: #ffc5ac;
+}
+
+.form__fieldset--checkbox.focus-visible:focus .form__checkbox-text:active {
+  color: #ff4d00;
+}
+
+.form__fieldset--checkbox.focus-visible:focus .form__checkbox-in {
+  border-color: #ffc5ac;
+}
+
+.form__fieldset--checkbox.focus-visible:focus .form__checkbox-icon {
+  color: #ffc5ac;
+}
+
+.form__fieldset--checkbox.focus-visible:focus:active .form__checkbox-icon {
+  color: #ff4d00;
+}
+
+.form__fieldset--checkbox.focus-visible:focus:active .form__checkbox-in {
+  border-color: #ff4d00;
 }
 
 .form__fieldset--checkbox input {
@@ -1624,31 +1651,6 @@ button,
   border-radius: 2px;
   min-width: 15px;
   height: 15px;
-  cursor: pointer;
-}
-
-.form__checkbox-in.focus-visible:focus {
-  border-color: #ffc5ac;
-}
-
-.form__checkbox-in.focus-visible:focus:active {
-  border-color: #ff4d00;
-}
-
-.form__checkbox-in.focus-visible:focus + .form__checkbox-text {
-  color: #ffc5ac;
-}
-
-.form__checkbox-in.focus-visible:focus + .form__checkbox-text:active {
-  color: #ff4d00;
-}
-
-.form__checkbox-in.focus-visible:focus .form__checkbox-icon {
-  color: #ffc5ac;
-}
-
-.form__checkbox-in.focus-visible:focus .form__checkbox-icon:active {
-  color: #ff4d00;
 }
 
 .form__checkbox-icon {
@@ -1668,6 +1670,11 @@ button,
   margin-bottom: -4px;
   max-width: 234px;
   width: 100%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .modal {
@@ -1690,7 +1697,7 @@ button,
   width: 500px;
   background-color: #00b3ff;
   border-radius: 3px;
-  padding: 38px 40px 45px;
+  padding: 38px 40px 41px;
   top: 146px;
   z-index: 10000;
 }
@@ -1789,7 +1796,32 @@ button,
   display: flex;
   gap: 10px;
   margin: 0 9px;
+  padding-bottom: 4px;
   cursor: pointer;
+}
+
+.modal__field--checkbox.focus-visible:focus .modal__checkbox-text {
+  color: #ffc5ac;
+}
+
+.modal__field--checkbox.focus-visible:focus .modal__checkbox-text:active {
+  color: #ff4d00;
+}
+
+.modal__field--checkbox.focus-visible:focus .modal__checkbox {
+  border-color: #ffc5ac;
+}
+
+.modal__field--checkbox.focus-visible:focus .modal__checkbox-icon {
+  color: #ffc5ac;
+}
+
+.modal__field--checkbox.focus-visible:focus:active .modal__checkbox-icon {
+  color: #ff4d00;
+}
+
+.modal__field--checkbox.focus-visible:focus:active .modal__checkbox {
+  border-color: #ff4d00;
 }
 
 .modal__field--checkbox input {
@@ -1948,6 +1980,11 @@ button,
   margin: 0;
   opacity: 0.8;
   margin-bottom: -4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .modal__button {
@@ -2012,44 +2049,6 @@ button,
     }
   }
 */
-
-@media (max-width: 1279px) {
-  .footer__list--navigation {
-    -webkit-columns: 1;
-    -moz-columns: 1;
-    columns: 1;
-  }
-}
-
-@media (max-width: 1279px) and (max-width: 1023px) {
-  .footer__list--navigation {
-    -webkit-columns: 1;
-    -moz-columns: 1;
-    columns: 1;
-  }
-
-  .footer__list--contacts {
-    gap: 5px;
-  }
-}
-
-@media (max-width: 1279px) and (max-width: 767px) {
-  .footer__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: -6px;
-    margin-top: 16px;
-    gap: 5px;
-  }
-}
 
 @media (max-width: 1023px) {
   .content {
@@ -2151,12 +2150,18 @@ button,
     max-width: 320px;
   }
 
-  .footer__item--phone {
-    margin-bottom: 5px;
+  .footer__list--navigation {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
   }
 
-  .footer__link {
-    white-space: nowrap;
+  .footer__list--contacts {
+    gap: 5px;
+  }
+
+  .footer__item--phone {
+    margin-bottom: 5px;
   }
 
   .footer__link--phone {
@@ -2434,6 +2439,20 @@ button,
     cursor: pointer;
   }
 
+  .footer__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 25px;
+    margin-bottom: -6px;
+    margin-top: 16px;
+    gap: 5px;
+  }
+
   .footer__title {
     margin-bottom: 0;
     text-align: left;
@@ -2448,7 +2467,6 @@ button,
   }
 
   .footer__item {
-    max-width: 270px;
     font-size: 14px;
     margin-bottom: 10px;
   }
@@ -2489,8 +2507,8 @@ button,
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    width: 269px;
     margin: 0 auto;
+    padding: 0 25px;
   }
 
   .intro img {
@@ -2677,8 +2695,9 @@ button,
   }
 
   .form__content {
-    -ms-grid-columns: 270px;
-    grid-template-columns: 270px;
+    width: 100%;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
     -ms-grid-rows: 50px 50px 180px 45px 30px;
     grid-template-rows: 50px 50px 180px 45px 30px;
     grid-template-areas: "name " "phone" "textarea" "button" "checkbox";
@@ -2889,28 +2908,52 @@ button,
     background-color: #696969;
   }
 
-  .form__checkbox-in:hover:not(.focus-visible) {
+  .form__fieldset--checkbox:hover:not(.focus-visible) .form__checkbox-text {
+    color: #ffc5ac;
+  }
+
+  .form__fieldset--checkbox:hover:not(.focus-visible) .form__checkbox-text:active {
+    color: #ff4d00;
+  }
+
+  .form__fieldset--checkbox:hover:not(.focus-visible) .form__checkbox-in {
     border-color: #ffc5ac;
   }
 
-  .form__checkbox-in:hover:not(.focus-visible):active {
+  .form__fieldset--checkbox:hover:not(.focus-visible) .form__checkbox-icon {
+    color: #ffc5ac;
+  }
+
+  .form__fieldset--checkbox:hover:not(.focus-visible):active .form__checkbox-icon {
+    color: #ff4d00;
+  }
+
+  .form__fieldset--checkbox:hover:not(.focus-visible):active .form__checkbox-in {
     border-color: #ff4d00;
   }
 
-  .form__checkbox-in:hover:not(.focus-visible) + .form__checkbox-text {
+  .modal__field--checkbox:hover:not(.focus-visible) .modal__checkbox-text {
     color: #ffc5ac;
   }
 
-  .form__checkbox-in:hover:not(.focus-visible) + .form__checkbox-text:active {
+  .modal__field--checkbox:hover:not(.focus-visible) .modal__checkbox-text:active {
     color: #ff4d00;
   }
 
-  .form__checkbox-in:hover:not(.focus-visible) .form__checkbox-icon {
+  .modal__field--checkbox:hover:not(.focus-visible) .modal__checkbox {
+    border-color: #ffc5ac;
+  }
+
+  .modal__field--checkbox:hover:not(.focus-visible) .modal__checkbox-icon {
     color: #ffc5ac;
   }
 
-  .form__checkbox-in:hover:not(.focus-visible) .form__checkbox-icon:active {
+  .modal__field--checkbox:hover:not(.focus-visible):active .modal__checkbox-icon {
     color: #ff4d00;
+  }
+
+  .modal__field--checkbox:hover:not(.focus-visible):active .modal__checkbox {
+    border-color: #ff4d00;
   }
 
   .modal__field--button input:hover:not(.focus-visible) {

@@ -22,7 +22,7 @@
   width: 500px;
   background-color: $color-deep-sky-blue-2;
   border-radius: 3px;
-  padding: 38px 40px 45px;
+  padding: 38px 40px 41px;
   top: 146px;
   z-index: 10000;
 }
@@ -82,7 +82,36 @@
     display: flex;
     gap: 10px;
     margin: 0 9px;
+    padding-bottom: 4px;
     cursor: pointer;
+
+    @include hover-focus {
+      & .modal__checkbox-text {
+        color: $color-apricot;
+
+        &:active {
+          color: $color-vermilion;
+        }
+      }
+
+      & .modal__checkbox {
+        border-color: $color-apricot;
+      }
+
+      & .modal__checkbox-icon {
+        color: $color-apricot;
+      }
+
+      &:active {
+        & .modal__checkbox-icon {
+          color: $color-vermilion;
+        }
+
+        & .modal__checkbox {
+          border-color: $color-vermilion;
+        }
+      }
+    }
 
     & input {
       width: 16px;
@@ -209,6 +238,8 @@
   margin: 0;
   opacity: 0.8;
   margin-bottom: -4px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .modal__button {

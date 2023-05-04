@@ -8,6 +8,7 @@ import {onAboutButtonClick} from './modules/about-list';
 import {phoneInputActions} from './modules/phone-input';
 import {modalTabActions} from './modules/popup-focus';
 import {overlayClick} from './modules/overlay-click';
+import {initPhoneInput} from './modules/form-validate/init-phone-input';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
   phoneInputActions();
   modalTabActions();
   overlayClick();
+  initPhoneInput();
 
   // ---------------------------------
 

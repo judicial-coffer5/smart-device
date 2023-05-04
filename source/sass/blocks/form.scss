@@ -121,7 +121,8 @@
     "button checkbox";
 
   @include vp-767 {
-    grid-template-columns: 270px;
+    width: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: 50px 50px 180px 45px 30px;
     grid-template-areas:
       "name "
@@ -248,6 +249,37 @@
     align-items: center;
     grid-area: checkbox;
     margin: 13px 0 0 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+
+    @include hover-focus {
+      & .form__checkbox-text {
+        color: $color-apricot;
+
+        &:active {
+          color: $color-vermilion;
+        }
+      }
+
+      & .form__checkbox-in {
+        border-color: $color-apricot;
+      }
+
+      & .form__checkbox-icon {
+        color: $color-apricot;
+      }
+
+      &:active {
+        & .form__checkbox-icon {
+          color: $color-vermilion;
+        }
+
+        & .form__checkbox-in {
+          border-color: $color-vermilion;
+        }
+      }
+    }
 
     & input {
       width: 16px;
@@ -298,7 +330,6 @@
   border-radius: 2px;
   min-width: 15px;
   height: 15px;
-  cursor: pointer;
 
   @include vp-1023 {
     margin-top: -3px;
@@ -306,30 +337,6 @@
 
   @include vp-767 {
     height: 14px;
-  }
-
-  @include hover-focus {
-    border-color: $color-apricot;
-
-    &:active {
-      border-color: $color-vermilion;
-    }
-
-    & + .form__checkbox-text {
-      color: $color-apricot;
-
-      &:active {
-        color: $color-vermilion;
-      }
-    }
-
-    & .form__checkbox-icon {
-      color: $color-apricot;
-
-      &:active {
-        color: $color-vermilion;
-      }
-    }
   }
 }
 
@@ -360,6 +367,8 @@
   margin-bottom: -4px;
   max-width: 234px;
   width: 100%;
+  cursor: pointer;
+  user-select: none;
 
   @include vp-1023 {
     margin-bottom: 0;

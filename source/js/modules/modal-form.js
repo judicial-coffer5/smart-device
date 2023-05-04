@@ -7,9 +7,11 @@ const openModal = () => {
     modalElement.classList.remove('is-hidden');
     modalElement.classList.add('is-open');
     nameInput.focus();
+    document.body.style.overflow = 'hidden';
   } else {
     modalElement.classList.remove('is-open');
     modalElement.classList.add('is-hidden');
+    document.body.style.overflow = '';
   }
 };
 

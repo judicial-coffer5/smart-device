@@ -299,9 +299,9 @@
                 <fieldset class="form__fieldset form__fieldset--button">
                   <input type="submit" value="Задать вопрос">
                 </fieldset>
-                <fieldset class="form__fieldset form__fieldset--checkbox" data-checkbox-field>
+                <fieldset class="form__fieldset form__fieldset--checkbox" data-checkbox data-checkbox-field tabindex="0">
                   <input class="visually-hidden" id="checkbox" type="checkbox" checked required data-checkbox-input tabindex="-1">
-                  <span class="form__checkbox-in" data-checkbox tabindex="0">
+                  <span class="form__checkbox-in">
                     <span class="form__checkbox-icon is-checked" data-checkbox-icon>
                       <svg width="9" height="6" aria-hidden="true" focusable="false">
                         <use xlink:href="./img/sprite.svg#checkbox"></use>
@@ -372,8 +372,7 @@
                 <a class="footer__link" href="#">Продукты</a>
               </li>
               <li class="footer__item footer__item--navigation">
-                <a class="footer__link" href="#">Производство печатных<br>
-                  плат</a>
+                <a class="footer__link" href="#">Производство печатных плат</a>
               </li>
               <li class="footer__item footer__item--navigation">
                 <a class="footer__link" href="#">Монтаж печатных плат</a>
@@ -403,8 +402,7 @@
               <li class="footer__item footer__item--address">
                 <a class="footer__link"
                   href="https://yandex.ru/maps/org/alta/207386972706/?ll=37.772379%2C55.916386&z=17"
-                  aria-label="Контактный адрес организации" target="_blank">г. Мытищи, Олимпийский проспект,<br>
-                  д.10</a>
+                  aria-label="Контактный адрес организации" target="_blank">г. Мытищи, Олимпийский проспект, д.10</a>
               </li>
               <li class="footer__item footer__item--phone">
                 <a class="footer__link footer__link--phone" href="tel:+74955894050"
@@ -458,9 +456,9 @@
             <div class="modal__field modal__field--button">
               <input type="submit" value="Отправить" data-submit data-popup-element>
             </div>
-            <div class="modal__field modal__field--checkbox" data-checkbox-field>
+            <div class="modal__field modal__field--checkbox" tabindex="0" data-popup-element data-checkbox data-checkbox-field>
               <input class="visually-hidden" id="checkbox-modal" type="checkbox" data-checkbox-input checked required>
-              <span class="modal__checkbox" data-checkbox data-popup-element tabindex="0">
+              <span class="modal__checkbox">
                 <svg class="modal__checkbox-icon is-checked" width="9" height="6" aria-hidden="true" focusable="false"
                   data-checkbox-icon>
                   <use xlink:href="./img/sprite.svg#checkbox"></use>
@@ -474,6 +472,7 @@
       </div>
     </div>
   </div>
+
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
